@@ -4,7 +4,7 @@
 
 ## Installing
 
-lua-wolfram is available in [LuaRocks](https://www.luarocks.org).
+lua-wolfram is available in [LuaRocks](https://luarocks.org/modules/leopiccionia/lua-wolfram).
 
 ```
 luarocks install lua-wolfram
