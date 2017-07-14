@@ -6,7 +6,9 @@
 
 lua-wolfram is available in [LuaRocks](https://www.luarocks.org).
 
-`luarocks install lua-wolfram`
+```
+luarocks install lua-wolfram
+```
 
 ## How to use
 
