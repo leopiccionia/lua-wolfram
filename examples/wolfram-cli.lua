@@ -12,17 +12,17 @@ local wolfram = WolframAlpha('YOUR-API-KEY-HERE')
 
 if not args.full then
     local body = assert(wolfram:query(args.query))
-	print('\n' .. body .. '\n')
+    print('\n' .. body .. '\n')
 else
     local body = assert(wolfram:full_query(args.query))
     for key, pod in pairs(body) do
         print('\n' .. style.bright .. key)
-		for subkey, subpod in pairs(pod) do
+        for subkey, subpod in pairs(pod) do
             if type(subkey) == 'string' then
                 print(subkey)
             end
             print(style.reset .. subpod)
         end
     end
-	print()
+    print()
 end
