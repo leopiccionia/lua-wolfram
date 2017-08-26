@@ -1,5 +1,6 @@
-#!/usr/bin/env luajit
+#!/usr/bin/env lua
 local cli = require 'cliargs'
+local style = (require 'term').colors
 
 cli:argument('query', 'Query to Wolfram|Alpha server.')
 cli:option('-f, --full', 'Whether to return full results.', false)
@@ -11,18 +12,17 @@ local wolfram = WolframAlpha('YOUR-API-KEY-HERE')
 
 if not args.full then
     local body = assert(wolfram:query(args.query))
-    print(body)
+	print('\n' .. body .. '\n')
 else
     local body = assert(wolfram:full_query(args.query))
     for key, pod in pairs(body) do
-        print(key .. ':')
-        for subkey, subpod in pairs(pod) do
+        print('\n' .. style.bright .. key)
+		for subkey, subpod in pairs(pod) do
             if type(subkey) == 'string' then
-                print('\t' .. subkey .. ':')
-                print('\t\t' .. subpod)
-            else
-                print('\t' .. subpod)
+                print(subkey)
             end
+            print(style.reset .. subpod)
         end
     end
+	print()
 end
