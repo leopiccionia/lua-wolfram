@@ -1,5 +1,5 @@
 package = 'lua-wolfram'
-version = '0.1-2'
+version = '0.2-0'
 
 source = {
     url = 'git://github.com/leopiccionia/lua-wolfram.git'
