@@ -20,6 +20,7 @@ OPTIONS:
 
 ## Screenshot
 ![Screenshot](wolfram-cli.png)
+
 *Example of full query, with count of results.*
 
 ## Additional dependencies
